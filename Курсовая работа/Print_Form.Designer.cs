@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Print_Form));
             this.printBox = new System.Windows.Forms.RichTextBox();
             this.printBox2 = new System.Windows.Forms.RichTextBox();
             this.sortSelection = new System.Windows.Forms.ComboBox();
@@ -65,7 +66,7 @@
             // 
             this.sortSelection.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sortSelection.FormattingEnabled = true;
-            this.sortSelection.Location = new System.Drawing.Point(135, 389);
+            this.sortSelection.Location = new System.Drawing.Point(135, 390);
             this.sortSelection.Name = "sortSelection";
             this.sortSelection.Size = new System.Drawing.Size(253, 32);
             this.sortSelection.TabIndex = 3;
@@ -125,12 +126,15 @@
             // backBtn2
             // 
             this.backBtn2.BackColor = System.Drawing.SystemColors.Control;
+            this.backBtn2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backBtn2.BackgroundImage")));
+            this.backBtn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.backBtn2.FlatAppearance.BorderSize = 0;
+            this.backBtn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.backBtn2.Location = new System.Drawing.Point(22, 387);
+            this.backBtn2.Location = new System.Drawing.Point(19, 387);
             this.backBtn2.Name = "backBtn2";
             this.backBtn2.Size = new System.Drawing.Size(99, 37);
             this.backBtn2.TabIndex = 28;
-            this.backBtn2.Text = "Back";
             this.backBtn2.UseVisualStyleBackColor = false;
             this.backBtn2.Click += new System.EventHandler(this.backBtn2_Click);
             // 
@@ -151,6 +155,7 @@
             this.Controls.Add(this.printBox);
             this.MaximizeBox = false;
             this.Name = "Print_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Print_Form";
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Print_Form_HelpRequested);
             this.ResumeLayout(false);

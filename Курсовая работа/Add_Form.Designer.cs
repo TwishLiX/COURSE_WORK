@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Form));
             this.addConsignmentLabel = new System.Windows.Forms.Label();
             this.addStoreNumberLabel = new System.Windows.Forms.Label();
             this.addQuantityLabel = new System.Windows.Forms.Label();
@@ -198,12 +199,15 @@
             // backBtn1
             // 
             this.backBtn1.BackColor = System.Drawing.SystemColors.Control;
+            this.backBtn1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backBtn1.BackgroundImage")));
+            this.backBtn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.backBtn1.FlatAppearance.BorderSize = 0;
+            this.backBtn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.backBtn1.Location = new System.Drawing.Point(12, 12);
+            this.backBtn1.Location = new System.Drawing.Point(8, 12);
             this.backBtn1.Name = "backBtn1";
-            this.backBtn1.Size = new System.Drawing.Size(99, 37);
+            this.backBtn1.Size = new System.Drawing.Size(99, 41);
             this.backBtn1.TabIndex = 27;
-            this.backBtn1.Text = "Back";
             this.backBtn1.UseVisualStyleBackColor = false;
             this.backBtn1.Click += new System.EventHandler(this.backBtn1_Click);
             // 
@@ -230,6 +234,7 @@
             this.Controls.Add(this.carShopLabel);
             this.MaximizeBox = false;
             this.Name = "Add_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add_Form";
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Add_Form_HelpRequested);
             this.ResumeLayout(false);

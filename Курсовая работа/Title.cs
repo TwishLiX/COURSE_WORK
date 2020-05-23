@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Курсовая_работа
@@ -16,7 +9,6 @@ namespace Курсовая_работа
         public Title()
         {
             InitializeComponent();
-            CenterToScreen();
             if (Storage.count == 0)
             {
                 Storage storage = new Storage();
@@ -120,8 +112,8 @@ namespace Курсовая_работа
 
         private void Title_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            EventArgs e = new EventArgs();
-            faqBtn_Click(sender, e);
+            FAQ_Form faq = new FAQ_Form();
+            faq.Show();
         }
     }
 }

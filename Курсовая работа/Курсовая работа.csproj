@@ -73,6 +73,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Storage.cs" />
     <Compile Include="Title.cs">
       <SubType>Form</SubType>
@@ -94,14 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Title.resx">
       <DependentUpon>Title.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,16 +119,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\geometric-8k-material-design-minimal-art-wallpaper-preview.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\android-material-style-tapet-simple-4k_1540751395.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Blank.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backBtns.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

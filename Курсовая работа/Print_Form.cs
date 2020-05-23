@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Курсовая_работа
@@ -15,7 +8,6 @@ namespace Курсовая_работа
         public Print_Form()
         {
             InitializeComponent();
-            CenterToScreen();
             sortSelection.Items.AddRange(new string[] { "Alphabetically", "By price (from cheap to exp.)", "By price (from exp. to cheap)", "By store number" });
             Output();
         }

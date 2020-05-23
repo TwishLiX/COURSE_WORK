@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Курсовая_работа
@@ -28,7 +21,7 @@ namespace Курсовая_работа
         private void faqAddBtn_Click(object sender, EventArgs e)
         {
             faqTitleLabel.Text = "Add item";
-            faqBox.Text = "You can add an item to the database if you go along the path 'Main Menu -> Add data to database'.\n\nHaving followed this path, you will need to fill in the fields corresponding to the data for each database item (product name, manufacturer, unit price, quantity and minimum consignment) and then click on the 'Add' button. After this action, the database size will be increased by one, and the product will be added to it.\n\nYou can add items to the database without leaving this section an unlimited number of times.";
+            faqBox.Text = "You can add an item to the database if you go along the path 'Main Menu -> Add data to database'.\n\nHaving followed this path, you will need to fill in the fields corresponding to the data for each database item (product name, manufacturer, unit price, quantity and minimum consignment) and then click on the 'Add' button. After this action, the database size will be increased by one, and item will be added to it.\n\nYou can add items to the database without leaving this section an unlimited number of times.";
         }
 
         private void faqEditBtn_Click(object sender, EventArgs e)
@@ -40,7 +33,7 @@ namespace Курсовая_работа
         private void faqDelBtn_Click(object sender, EventArgs e)
         {
             faqTitleLabel.Text = "Delete item";
-            faqBox.Text = "You can edit an item from the database if you go along the path 'Main Menu -> Edit database'.\n\nHaving followed this path, you will need to enter the password that is defined in the program code.\n\nAfter entering the password, you will have the option to remove the item from the database.\n\nYou can select the element you need to delete by searching by the name of the element, or by switching between all elements of the database.\n\nIn addition, you will have the option to delete all items from the database.";
+            faqBox.Text = "You can edit an item from the database if you go along the path 'Main Menu -> Edit database'.\n\nHaving followed this path, you will need to enter the password that is defined in the program code.\n\nAfter entering the password, you will have the option to remove the item from the database.\n\nYou can select the element you need to delete by searching by the name of the element, or by switching between all elements of the database.\n\nIn addition, you will have the option to delete all items from the database at the click of a button.";
         }
 
         private void faqDispBtn_Click(object sender, EventArgs e)
@@ -64,7 +57,7 @@ namespace Курсовая_работа
         private void faqAboutBtn_Click(object sender, EventArgs e)
         {
             faqTitleLabel.Text = "Information about program";
-            faqBox.Text = "The program was developed as a course project for the course 'Programming and Theory of Algorithms', performed by Khatsaiuk A.A.\n\nOdessa, 2020.";
+            faqBox.Text = "This program was developed as a course project for the course 'Programming and Theory of Algorithms', performed by Khatsaiuk A.A.\n\nOdessa, 2020.";
         }
     }
 }

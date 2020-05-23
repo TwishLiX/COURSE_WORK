@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Курсовая_работа
@@ -12,7 +10,6 @@ namespace Курсовая_работа
         public Edit_Form()
         {
             InitializeComponent();
-            CenterToScreen();
         }
 
         private void backBtn3_Click(object sender, EventArgs e)

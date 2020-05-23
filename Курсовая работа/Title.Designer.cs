@@ -161,6 +161,7 @@
             this.Controls.Add(this.welcomeLabel);
             this.MaximizeBox = false;
             this.Name = "Title";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Title";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Title_FormClosing);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Title_HelpRequested);

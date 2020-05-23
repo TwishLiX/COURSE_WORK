@@ -63,9 +63,19 @@ namespace Курсовая_работа.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap android_material_style_tapet_simple_4k_1540751395 {
+        internal static System.Drawing.Bitmap backBtns {
             get {
-                object obj = ResourceManager.GetObject("android-material-style-tapet-simple-4k_1540751395", resourceCulture);
+                object obj = ResourceManager.GetObject("backBtns", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backBtns4 {
+            get {
+                object obj = ResourceManager.GetObject("backBtns4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,16 +86,6 @@ namespace Курсовая_работа.Properties {
         internal static System.Drawing.Bitmap Blank {
             get {
                 object obj = ResourceManager.GetObject("Blank", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap geometric_8k_material_design_minimal_art_wallpaper_preview {
-            get {
-                object obj = ResourceManager.GetObject("geometric-8k-material-design-minimal-art-wallpaper-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_Form));
             this.backBtn3 = new System.Windows.Forms.Button();
             this.passRequestLabel = new System.Windows.Forms.Label();
             this.passBox = new System.Windows.Forms.TextBox();
@@ -58,12 +59,15 @@
             // backBtn3
             // 
             this.backBtn3.BackColor = System.Drawing.SystemColors.Control;
+            this.backBtn3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backBtn3.BackgroundImage")));
+            this.backBtn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.backBtn3.FlatAppearance.BorderSize = 0;
+            this.backBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.backBtn3.Location = new System.Drawing.Point(12, 14);
+            this.backBtn3.Location = new System.Drawing.Point(7, 11);
             this.backBtn3.Name = "backBtn3";
             this.backBtn3.Size = new System.Drawing.Size(99, 37);
             this.backBtn3.TabIndex = 29;
-            this.backBtn3.Text = "Back";
             this.backBtn3.UseVisualStyleBackColor = false;
             this.backBtn3.Click += new System.EventHandler(this.backBtn3_Click);
             // 
@@ -72,7 +76,7 @@
             this.passRequestLabel.AutoSize = true;
             this.passRequestLabel.BackColor = System.Drawing.Color.Transparent;
             this.passRequestLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.passRequestLabel.Location = new System.Drawing.Point(176, 163);
+            this.passRequestLabel.Location = new System.Drawing.Point(179, 163);
             this.passRequestLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passRequestLabel.Name = "passRequestLabel";
             this.passRequestLabel.Size = new System.Drawing.Size(454, 26);
@@ -82,7 +86,7 @@
             // passBox
             // 
             this.passBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passBox.Location = new System.Drawing.Point(269, 206);
+            this.passBox.Location = new System.Drawing.Point(275, 206);
             this.passBox.Margin = new System.Windows.Forms.Padding(2);
             this.passBox.Name = "passBox";
             this.passBox.PasswordChar = '•';
@@ -92,7 +96,7 @@
             // passOkBtn
             // 
             this.passOkBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.passOkBtn.Location = new System.Drawing.Point(465, 205);
+            this.passOkBtn.Location = new System.Drawing.Point(471, 205);
             this.passOkBtn.Name = "passOkBtn";
             this.passOkBtn.Size = new System.Drawing.Size(47, 26);
             this.passOkBtn.TabIndex = 32;
@@ -242,7 +246,7 @@
             // 
             this.editLabel.AutoSize = true;
             this.editLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.editLabel.Location = new System.Drawing.Point(150, 15);
+            this.editLabel.Location = new System.Drawing.Point(150, 17);
             this.editLabel.Name = "editLabel";
             this.editLabel.Size = new System.Drawing.Size(503, 24);
             this.editLabel.TabIndex = 45;
@@ -265,7 +269,7 @@
             // searchNameBtn
             // 
             this.searchNameBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.searchNameBtn.Location = new System.Drawing.Point(442, 53);
+            this.searchNameBtn.Location = new System.Drawing.Point(442, 55);
             this.searchNameBtn.Name = "searchNameBtn";
             this.searchNameBtn.Size = new System.Drawing.Size(47, 26);
             this.searchNameBtn.TabIndex = 47;
@@ -277,7 +281,7 @@
             // searchNameBox
             // 
             this.searchNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.searchNameBox.Location = new System.Drawing.Point(246, 53);
+            this.searchNameBox.Location = new System.Drawing.Point(246, 55);
             this.searchNameBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchNameBox.Name = "searchNameBox";
             this.searchNameBox.Size = new System.Drawing.Size(181, 26);
@@ -287,7 +291,7 @@
             // deleteAllBtn
             // 
             this.deleteAllBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.deleteAllBtn.Location = new System.Drawing.Point(501, 54);
+            this.deleteAllBtn.Location = new System.Drawing.Point(501, 56);
             this.deleteAllBtn.Name = "deleteAllBtn";
             this.deleteAllBtn.Size = new System.Drawing.Size(71, 26);
             this.deleteAllBtn.TabIndex = 49;
@@ -379,6 +383,7 @@
             this.Controls.Add(this.backBtn3);
             this.MaximizeBox = false;
             this.Name = "Edit_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit_Form";
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Edit_Form_HelpRequested);
             this.ResumeLayout(false);
