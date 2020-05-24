@@ -7,7 +7,6 @@ namespace Курсовая_работа
 {
     class Files
     {
-        Storage storage = new Storage();
         public void Write()
         {
             SaveFileDialog save = new SaveFileDialog();
@@ -38,6 +37,7 @@ namespace Курсовая_работа
 
         public void Read(bool is_overwrite)
         {
+            Storage storage = new Storage();
             OpenFileDialog open = new OpenFileDialog();
             open.DefaultExt = "*.bin";
             open.Filter = "Binary files (*.bin) | *.bin";

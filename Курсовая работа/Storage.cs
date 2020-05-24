@@ -9,7 +9,8 @@ namespace Курсовая_работа
     class Storage
     {
         public static string password = "course_c#";
-        public static int size = 20, index = size, count = 0;
+        public static bool first_start = true;
+        public static int size = 20, index = size;
         public static string[] product_name = new string[size];
         public static string[] manufacturer = new string[size];
         public static int[] price = new int[size];
@@ -43,7 +44,7 @@ namespace Курсовая_работа
                 store_number[i] = begin_storenumbers[i];
                 consignment[i] = begin_consignments[i];
             }
-            count++;
+            first_start = false;
         }
 
         public void ProductAdd(string new_product_name, string new_manufacturer, int new_price, int new_quantity, int new_store_number, int new_min_consignment)
@@ -79,41 +80,17 @@ namespace Курсовая_работа
             int[] temp_store_number = new int[new_size];
             int[] temp_consignment = new int[new_size];
 
-            Array.Copy(product_name, 0, temp_product_name, 0, current);
-            Array.Copy(manufacturer, 0, temp_manufacturer, 0, current);
-            Array.Copy(price, 0, temp_price, 0, current);
-            Array.Copy(quantity, 0, temp_quantity, 0, current);
-            Array.Copy(store_number, 0, temp_store_number, 0, current);
-            Array.Copy(consignment, 0, temp_consignment, 0, current);
-
-            Array.Copy(product_name, current + 1, temp_product_name, current, size - current - 1);
-            Array.Copy(manufacturer, current + 1, temp_manufacturer, current, size - current - 1);
-            Array.Copy(price, current + 1, temp_price, current, size - current - 1);
-            Array.Copy(quantity, current + 1, temp_quantity, current, size - current - 1);
-            Array.Copy(store_number, current + 1, temp_store_number, current, size - current - 1);
-            Array.Copy(consignment, current + 1, temp_consignment, current, size - current - 1);
-
-            ClearAll();
+            ArrayCopy(product_name, manufacturer, price, quantity, store_number, consignment, temp_product_name, temp_manufacturer, temp_price, temp_quantity, temp_store_number, temp_consignment, 0, 0, current);
+            ArrayCopy(product_name, manufacturer, price, quantity, store_number, consignment, temp_product_name, temp_manufacturer, temp_price, temp_quantity, temp_store_number, temp_consignment, current + 1, current, size - current - 1);
+            ClearAll(product_name, manufacturer, price, quantity, store_number, consignment);
             size = new_size;
             index = size;
             ArrayResize();
-
-            Array.Copy(temp_product_name, 0, product_name, 0, size);
-            Array.Copy(temp_manufacturer, 0, manufacturer, 0, size);
-            Array.Copy(temp_price, 0, price, 0, size);
-            Array.Copy(temp_quantity, 0, quantity, 0, size);
-            Array.Copy(temp_store_number, 0, store_number, 0, size);
-            Array.Copy(temp_consignment, 0, consignment, 0, size);
-
-            Array.Clear(temp_product_name, 0, size);
-            Array.Clear(temp_manufacturer, 0, size);
-            Array.Clear(temp_price, 0, size);
-            Array.Clear(temp_quantity, 0, size);
-            Array.Clear(temp_store_number, 0, size);
-            Array.Clear(temp_consignment, 0, size);
+            ArrayCopy(temp_product_name, temp_manufacturer, temp_price, temp_quantity, temp_store_number, temp_consignment, product_name, manufacturer, price, quantity, store_number, consignment, 0, 0, size);
+            ClearAll(temp_product_name, temp_manufacturer, temp_price, temp_quantity, temp_store_number, temp_consignment);
         }
 
-        public void ClearAll()
+        public void ClearAll(string[] product_name, string[] manufacturer, int[] price, int[] quantity, int[] store_number, int[] consignment)
         {
             Array.Clear(product_name, 0, size);
             Array.Clear(manufacturer, 0, size);
@@ -123,6 +100,16 @@ namespace Курсовая_работа
             Array.Clear(consignment, 0, size);
             size = 0;
             index = 0;
+        }
+
+        public void ArrayCopy(string[] product_name, string[] manufacturer, int[] price, int[] quantity, int[] store_number, int[] consignment, string[] temp_product_name, string[] temp_manufacturer, int[] temp_price, int[] temp_quantity, int[] temp_store_number, int[] temp_consignment, int begin_first, int begin_second, int size)
+        {
+            Array.Copy(product_name, begin_first, temp_product_name, begin_second, size);
+            Array.Copy(manufacturer, begin_first, temp_manufacturer, begin_second, size);
+            Array.Copy(price, begin_first, temp_price, begin_second, size);
+            Array.Copy(quantity, begin_first, temp_quantity, begin_second, size);
+            Array.Copy(store_number, begin_first, temp_store_number, begin_second, size);
+            Array.Copy(consignment, begin_first, temp_consignment, begin_second, size);
         }
 
         public void ArrayResize()

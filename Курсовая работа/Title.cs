@@ -9,7 +9,7 @@ namespace Курсовая_работа
         public Title()
         {
             InitializeComponent();
-            if (Storage.count == 0)
+            if (Storage.first_start == true)
             {
                 Storage storage = new Storage();
                 storage.BeginAssingment();
@@ -24,21 +24,21 @@ namespace Курсовая_работа
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             Add_Form add = new Add_Form();
             add.Show();
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             Edit_Form edit = new Edit_Form();
             edit.Show();
         }
 
         private void printBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             Print_Form print = new Print_Form();
             print.Show();
         }
@@ -69,7 +69,7 @@ namespace Курсовая_работа
             {
                 is_overwrite = true;
                 files.Read(is_overwrite);
-                this.Hide();
+                Hide();
                 Title title = new Title();
                 title.Show();
             }

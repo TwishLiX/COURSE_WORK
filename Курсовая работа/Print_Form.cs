@@ -14,7 +14,7 @@ namespace Курсовая_работа
 
         private void backBtn2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
             Title title = new Title();
             title.Show();
         }

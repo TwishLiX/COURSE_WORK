@@ -14,7 +14,7 @@ namespace Курсовая_работа
 
         private void backBtn3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
             Title title = new Title();
             title.Show();
         }
@@ -99,7 +99,7 @@ namespace Курсовая_работа
             var result = MessageBox.Show("Are you sure you are want to clear the database?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
-                storage.ClearAll();
+                storage.ClearAll(Storage.product_name, Storage.manufacturer, Storage.price, Storage.quantity, Storage.store_number, Storage.consignment);
                 MessageBox.Show("The database was cleared.");
                 backBtn3_Click(sender, e);
             }
