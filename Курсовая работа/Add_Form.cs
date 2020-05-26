@@ -34,7 +34,7 @@ namespace Курсовая_работа
 
                 for (int i = 0; i < Storage.size; i++)
                 {
-                    if (product_name == Storage.product_name[i])
+                    if (product_name == Storage.car[i].product_name)
                         count++;
                 }
                 if (count != 0)
@@ -43,10 +43,16 @@ namespace Курсовая_работа
                 }
                 else
                 {
-                    if (product_name.Length >= 3 && manufacturer.Length >= 3 && price > 0 && quantity >= 0 && store_number >= 0 && min_consignment > 0)
+                    if (product_name.Length >= 3 && manufacturer.Length >= 3 && price > 0 && quantity >= 0 && store_number > 0 && min_consignment > 0)
                     {
                         storage.ProductAdd(product_name, manufacturer, price, quantity, store_number, min_consignment);
                         MessageBox.Show("Data was successfully recorded.");
+                        nameBox.Clear();
+                        manufactureBox.Clear();
+                        priceBox.Clear();
+                        quantityBox.Clear();
+                        storeNumberBox.Clear();
+                        consignmentBox.Clear();
                     }
                     else
                     {

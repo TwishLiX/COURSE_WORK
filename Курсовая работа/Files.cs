@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -22,12 +21,12 @@ namespace Курсовая_работа
                 bw.Write(Storage.index);
                 for (int i = 0; i < Storage.size; i++)
                 {
-                    bw.Write(Storage.product_name[i]);
-                    bw.Write(Storage.manufacturer[i]);
-                    bw.Write(Storage.price[i]);
-                    bw.Write(Storage.quantity[i]);
-                    bw.Write(Storage.store_number[i]);
-                    bw.Write(Storage.consignment[i]);
+                    bw.Write(Storage.car[i].product_name);
+                    bw.Write(Storage.car[i].manufacturer);
+                    bw.Write(Storage.car[i].price);
+                    bw.Write(Storage.car[i].quantity);
+                    bw.Write(Storage.car[i].store_number);
+                    bw.Write(Storage.car[i].consignment);
                 }
                 MessageBox.Show("Database was successfully loaded to file.");
                 bw.Close();
@@ -54,12 +53,12 @@ namespace Курсовая_работа
                     storage.ArrayResize();
                     for (int i = 0; i < Storage.size; i++)
                     {
-                        Storage.product_name[i] = br.ReadString();
-                        Storage.manufacturer[i] = br.ReadString();
-                        Storage.price[i] = br.ReadInt32();
-                        Storage.quantity[i] = br.ReadInt32();
-                        Storage.store_number[i] = br.ReadInt32();
-                        Storage.consignment[i] = br.ReadInt32();
+                        Storage.car[i].product_name = br.ReadString();
+                        Storage.car[i].manufacturer = br.ReadString();
+                        Storage.car[i].price = br.ReadInt32();
+                        Storage.car[i].quantity = br.ReadInt32();
+                        Storage.car[i].store_number = br.ReadInt32();
+                        Storage.car[i].consignment = br.ReadInt32();
                     }
                 }
                 if (is_overwrite == false)
@@ -70,12 +69,12 @@ namespace Курсовая_работа
                     storage.ArrayResize();
                     for (int i = temp_size; i < Storage.size; i++)
                     {
-                        Storage.product_name[i] = br.ReadString();
-                        Storage.manufacturer[i] = br.ReadString();
-                        Storage.price[i] = br.ReadInt32();
-                        Storage.quantity[i] = br.ReadInt32();
-                        Storage.store_number[i] = br.ReadInt32();
-                        Storage.consignment[i] = br.ReadInt32();
+                        Storage.car[i].product_name = br.ReadString();
+                        Storage.car[i].manufacturer = br.ReadString();
+                        Storage.car[i].price = br.ReadInt32();
+                        Storage.car[i].quantity = br.ReadInt32();
+                        Storage.car[i].store_number = br.ReadInt32();
+                        Storage.car[i].consignment = br.ReadInt32();
                     }
                 }
                 MessageBox.Show("Data was successfully loaded from file.");

@@ -9,11 +9,6 @@ namespace Курсовая_работа
         public Title()
         {
             InitializeComponent();
-            if (Storage.first_start == true)
-            {
-                Storage storage = new Storage();
-                storage.BeginAssingment();
-            }
             if (Storage.size == 0)
             {
                 editBtn.Enabled = false;

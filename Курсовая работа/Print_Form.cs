@@ -36,10 +36,10 @@ namespace Курсовая_работа
                     }
                     for (int i = 0; i < Storage.size; i++)
                     {
-                        if (Storage.store_number[i] == store_number)
+                        if (Storage.car[i].store_number == store_number)
                         {
-                            printBox2.Text += ($"Product name: {Storage.manufacturer[i]} {Storage.product_name[i]}\n");
-                            printBox2.Text += ($"Quantity: {Storage.quantity[i]}\n\n");
+                            printBox2.Text += ($"Product name: {Storage.car[i].manufacturer} {Storage.car[i].product_name}\n");
+                            printBox2.Text += ($"Quantity: {Storage.car[i].quantity}\n\n");
                             count++;
                         }
                     }
@@ -61,10 +61,10 @@ namespace Курсовая_работа
             }
             for (int i = 0; i < Storage.size; i++)
             {
-                if (Storage.consignment[i] < 5)
+                if (Storage.car[i].consignment < 5)
                 {
-                    printBox2.Text += ($"Product name: {Storage.manufacturer[i]} {Storage.product_name[i]}\n");
-                    printBox2.Text += ($"Quantity: {Storage.quantity[i]}\n\n");
+                    printBox2.Text += ($"Product name: {Storage.car[i].manufacturer} {Storage.car[i].product_name}\n");
+                    printBox2.Text += ($"Quantity: {Storage.car[i].quantity}\n\n");
                     count++;
                 }
             }
@@ -79,50 +79,105 @@ namespace Курсовая_работа
             }
             for (int i = 0; i < Storage.size; i++)
             {
-                printBox2.Text += ($"Product name: {Storage.manufacturer[i]} {Storage.product_name[i]}\n");
-                printBox2.Text += ($"Unit price: {Storage.price[i]}$\n\n");
+                printBox2.Text += ($"Product name: {Storage.car[i].manufacturer} {Storage.car[i].product_name}\n");
+                printBox2.Text += ($"Unit price: {Storage.car[i].price}$\n\n");
             }
         }
         private void sortSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CarShop[] sort = new CarShop[1];
+            CarShop[] temp_array = new CarShop[Storage.size];
+            for (int i = 0; i < Storage.size; i++)
+            {
+                temp_array[i] = Storage.car[i];
+            }
             switch(sortSelection.Text)
             {
                 case "Alphabetically":
-                    printBox.Clear();
-                    Array.Sort(Storage.product_name);
-                    Output();
+                    for (int i = 0; i < Storage.car.Length - 1; i++)
+                    {
+                        for (int j = i + 1; j < Storage.car.Length; j++)
+                        {
+                            if (string.Compare(Storage.car[i].product_name, Storage.car[j].product_name) > 0)
+                            {
+                                sort[0] = Storage.car[i];
+                                Storage.car[i] = Storage.car[j];
+                                Storage.car[j] = sort[0];
+                            }
+                        }
+                    }
+                    SwapBack(temp_array);
                     break;
                 case "By price (from cheap to exp.)":
-                    printBox.Clear();
-                    Array.Sort(Storage.price);
-                    Output();
+                    for (int i = 0; i < Storage.car.Length - 1; i++)
+                    {
+                        for (int j = i + 1; j < Storage.car.Length; j++)
+                        {
+                            if (Storage.car[i].price > Storage.car[j].price)
+                            {
+                                sort[0] = Storage.car[i];
+                                Storage.car[i] = Storage.car[j];
+                                Storage.car[j] = sort[0];
+                            }
+                        }
+                    }
+                    SwapBack(temp_array);
                     break;
                 case "By price (from exp. to cheap)":
-                    printBox.Clear();
-                    Array.Sort(Storage.price);
-                    Array.Reverse(Storage.price);
-                    Output();
+                    for (int i = 0; i < Storage.car.Length - 1; i++)
+                    {
+                        for (int j = i + 1; j < Storage.car.Length; j++)
+                        {
+                            if (Storage.car[i].price < Storage.car[j].price)
+                            {
+                                sort[0] = Storage.car[i];
+                                Storage.car[i] = Storage.car[j];
+                                Storage.car[j] = sort[0];
+                            }
+                        }
+                    }
+                    SwapBack(temp_array);
                     break;
                 case "By store number":
-                    printBox.Clear();
-                    Array.Sort(Storage.store_number);
-                    Output();
+                    for (int i = 0; i < Storage.car.Length - 1; i++)
+                    {
+                        for (int j = i + 1; j < Storage.car.Length; j++)
+                        {
+                            if (Storage.car[i].store_number > Storage.car[j].store_number)
+                            {
+                                sort[0] = Storage.car[i];
+                                Storage.car[i] = Storage.car[j];
+                                Storage.car[j] = sort[0];
+                            }
+                        }
+                    }
+                    SwapBack(temp_array);
                     break;
             }
         }
         private void Output()
         {
-            
+            printBox.Clear();
             for (int i = 0; i < Storage.size; i++)
             {
                 printBox.Text += ($"Product №{i + 1}\n");
-                printBox.Text += ($"Product name: {Storage.product_name[i]}\n");
-                printBox.Text += ($"Manufacturer: {Storage.manufacturer[i]}\n");
-                printBox.Text += ($"Unit price: {Storage.price[i]}$\n");
-                printBox.Text += ($"Quantity: {Storage.quantity[i]}\n");
-                printBox.Text += ($"Store number: {Storage.store_number[i]}\n");
-                printBox.Text += ($"Minimum party: {Storage.consignment[i]}\n\n");
+                printBox.Text += ($"Product name: {Storage.car[i].product_name}\n");
+                printBox.Text += ($"Manufacturer: {Storage.car[i].manufacturer}\n");
+                printBox.Text += ($"Unit price: {Storage.car[i].price}$\n");
+                printBox.Text += ($"Quantity: {Storage.car[i].quantity}\n");
+                printBox.Text += ($"Store number: {Storage.car[i].store_number}\n");
+                printBox.Text += ($"Minimum party: {Storage.car[i].consignment}\n\n");
             }
+        }
+
+        private void SwapBack(CarShop[] temp_array)
+        {
+            Output();
+            for (int i = 0; i < Storage.size; i++)
+            {
+                Storage.car[i] = temp_array[i];
+            }
+            Array.Clear(temp_array, 0, Storage.size);
         }
 
         private void Print_Form_HelpRequested(object sender, HelpEventArgs hlpevent)

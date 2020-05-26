@@ -7,9 +7,12 @@ namespace Курсовая_работа
     {
         Storage storage = new Storage();
         int current;
+        public static bool confirmation;
         public Edit_Form()
         {
             InitializeComponent();
+            if (confirmation == true)
+                GetVisibleElements();
         }
 
         private void backBtn3_Click(object sender, EventArgs e)
@@ -25,33 +28,9 @@ namespace Курсовая_работа
             string password = passBox.Text;
             if (password == Storage.password)
             {
+                confirmation = true;
                 MessageBox.Show("Correct! Now you can edit the database.");
-                passRequestLabel.Visible = false;
-                passBox.Visible = false;
-                passOkBtn.Visible = false;
-                editLabel.Visible = true;
-                searchNameBox.Visible = true;
-                searchNameBtn.Visible = true;
-                deleteAllBtn.Visible = true;
-                elementNumLabel.Visible = true;
-                editNameLabel.Visible = true;
-                editManufactureLabel.Visible = true;
-                editPriceLabel.Visible = true;
-                editQuantityLabel.Visible = true;
-                editStoreNumberLabel.Visible = true;
-                editConsignmentLabel.Visible = true;
-                editNameBox.Visible = true;
-                editManufactureBox.Visible = true;
-                editPriceBox.Visible = true;
-                editQuantityBox.Visible = true;
-                editStoreNumberBox.Visible = true;
-                editConsignmentBox.Visible = true;
-                overwriteBtn.Visible = true;
-                deleteBtn.Visible = true;
-                previousElementBtn.Visible = true;
-                nextElementBtn.Visible = true;
-
-                TextBoxAssignment(current);
+                GetVisibleElements();
             }
             else
             {
@@ -81,7 +60,7 @@ namespace Курсовая_работа
             int count = 0;
             for (int i = 0; i < Storage.size; i++)
             {
-                if (search == Storage.product_name[i])
+                if (search == Storage.car[i].product_name)
                 {
                     current = i;
                     TextBoxAssignment(current);
@@ -99,7 +78,7 @@ namespace Курсовая_работа
             var result = MessageBox.Show("Are you sure you are want to clear the database?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
-                storage.ClearAll(Storage.product_name, Storage.manufacturer, Storage.price, Storage.quantity, Storage.store_number, Storage.consignment);
+                storage.ClearAll();
                 MessageBox.Show("The database was cleared.");
                 backBtn3_Click(sender, e);
             }
@@ -117,7 +96,7 @@ namespace Курсовая_работа
                 quantity = Convert.ToInt32(editQuantityBox.Text);
                 store_number = Convert.ToInt32(editStoreNumberBox.Text);
                 min_consignment = Convert.ToInt32(editConsignmentBox.Text);
-                if (product_name.Length >= 3 && manufacturer.Length >= 3 && price > 0 && quantity >= 0 && store_number >= 0 && min_consignment > 0)
+                if (product_name.Length >= 3 && manufacturer.Length >= 3 && price > 0 && quantity >= 0 && store_number > 0 && min_consignment > 0)
                 {
                     storage.ProductEdit(product_name, manufacturer, price, quantity, store_number, min_consignment, current);
                     MessageBox.Show("Data was successfully recorded.");
@@ -145,12 +124,41 @@ namespace Курсовая_работа
         private void TextBoxAssignment(int current)
         {
             elementNumLabel.Text = $"Element №{current + 1}";
-            editNameBox.Text = Storage.product_name[current];
-            editManufactureBox.Text = Storage.manufacturer[current];
-            editPriceBox.Text = Convert.ToString(Storage.price[current]);
-            editQuantityBox.Text = Convert.ToString(Storage.quantity[current]);
-            editStoreNumberBox.Text = Convert.ToString(Storage.store_number[current]);
-            editConsignmentBox.Text = Convert.ToString(Storage.consignment[current]);
+            editNameBox.Text = Storage.car[current].product_name;
+            editManufactureBox.Text = Storage.car[current].manufacturer;
+            editPriceBox.Text = Convert.ToString(Storage.car[current].price);
+            editQuantityBox.Text = Convert.ToString(Storage.car[current].quantity);
+            editStoreNumberBox.Text = Convert.ToString(Storage.car[current].store_number);
+            editConsignmentBox.Text = Convert.ToString(Storage.car[current].consignment);
+        }
+
+        private void GetVisibleElements()
+        {
+            passRequestLabel.Visible = false;
+            passBox.Visible = false;
+            passOkBtn.Visible = false;
+            editLabel.Visible = true;
+            searchNameBox.Visible = true;
+            searchNameBtn.Visible = true;
+            deleteAllBtn.Visible = true;
+            elementNumLabel.Visible = true;
+            editNameLabel.Visible = true;
+            editManufactureLabel.Visible = true;
+            editPriceLabel.Visible = true;
+            editQuantityLabel.Visible = true;
+            editStoreNumberLabel.Visible = true;
+            editConsignmentLabel.Visible = true;
+            editNameBox.Visible = true;
+            editManufactureBox.Visible = true;
+            editPriceBox.Visible = true;
+            editQuantityBox.Visible = true;
+            editStoreNumberBox.Visible = true;
+            editConsignmentBox.Visible = true;
+            overwriteBtn.Visible = true;
+            deleteBtn.Visible = true;
+            previousElementBtn.Visible = true;
+            nextElementBtn.Visible = true;
+            TextBoxAssignment(current);
         }
 
         private void Edit_Form_HelpRequested(object sender, HelpEventArgs hlpevent)
