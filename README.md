@@ -2,4 +2,4 @@
 
 Выполнил: Хацаюк Александр, вариант №18.
 
-Пояснительная записка: https://drive.google.com/file/d/1zVEzvsTr1c1fMtNO5mPdpsx51aa5HCdq/view?usp=sharing
+Пояснительная записка: https://drive.google.com/file/d/1085mfofMDsq0dp7ogMFLn-YYUu12-HOU/view?usp=sharing
