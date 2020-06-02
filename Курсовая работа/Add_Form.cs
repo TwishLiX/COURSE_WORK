@@ -62,7 +62,7 @@ namespace Курсовая_работа
             }
             catch
             {
-                MessageBox.Show("Incorrectly entered format.");
+                MessageBox.Show("Incorrectly entered format or one of the fields is empty.");
             }
         }
 

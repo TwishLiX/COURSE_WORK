@@ -106,7 +106,6 @@ namespace Курсовая_работа
                             }
                         }
                     }
-                    SwapBack(temp_array);
                     break;
                 case "By price (from cheap to exp.)":
                     for (int i = 0; i < Storage.car.Length - 1; i++)
@@ -121,7 +120,6 @@ namespace Курсовая_работа
                             }
                         }
                     }
-                    SwapBack(temp_array);
                     break;
                 case "By price (from exp. to cheap)":
                     for (int i = 0; i < Storage.car.Length - 1; i++)
@@ -136,7 +134,6 @@ namespace Курсовая_работа
                             }
                         }
                     }
-                    SwapBack(temp_array);
                     break;
                 case "By store number":
                     for (int i = 0; i < Storage.car.Length - 1; i++)
@@ -151,9 +148,9 @@ namespace Курсовая_работа
                             }
                         }
                     }
-                    SwapBack(temp_array);
                     break;
             }
+            SwapBack(temp_array);
         }
         private void Output()
         {
