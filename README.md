@@ -2,4 +2,8 @@
 
 Выполнил: Хацаюк Александр, вариант №18.
 
-Пояснительная записка: https://drive.google.com/file/d/1wsgoJw7vVUiMh_tfWaaDvoOpINvBGFMT/view?usp=sharing
+Пояснительная записка: https://drive.google.com/file/d/1s60BP8tM6XgExPy5wczSvvKauOCqsEbG/view?usp=sharing
+
+Для проверки работоспособности программы можно использовать файл "20 elements.bin" с главной страницы репозитория, загрузив данные из файла (20 записей) в базу данных в главном меню приложения.
+
+Пароль для доступа в раздел редактирования базы данных: course_c#
