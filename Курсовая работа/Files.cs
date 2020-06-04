@@ -53,12 +53,7 @@ namespace Курсовая_работа
                     storage.ArrayResize();
                     for (int i = 0; i < Storage.size; i++)
                     {
-                        Storage.car[i].product_name = br.ReadString();
-                        Storage.car[i].manufacturer = br.ReadString();
-                        Storage.car[i].price = br.ReadInt32();
-                        Storage.car[i].quantity = br.ReadInt32();
-                        Storage.car[i].store_number = br.ReadInt32();
-                        Storage.car[i].consignment = br.ReadInt32();
+                        Reading(br, i);
                     }
                 }
                 if (is_overwrite == false)
@@ -69,12 +64,7 @@ namespace Курсовая_работа
                     storage.ArrayResize();
                     for (int i = temp_size; i < Storage.size; i++)
                     {
-                        Storage.car[i].product_name = br.ReadString();
-                        Storage.car[i].manufacturer = br.ReadString();
-                        Storage.car[i].price = br.ReadInt32();
-                        Storage.car[i].quantity = br.ReadInt32();
-                        Storage.car[i].store_number = br.ReadInt32();
-                        Storage.car[i].consignment = br.ReadInt32();
+                        Reading(br, i);
                     }
                 }
                 MessageBox.Show("Data was successfully loaded from file.");
@@ -82,5 +72,16 @@ namespace Курсовая_работа
                 fs.Close();
             }
         }
+
+        public void Reading(BinaryReader br, int i)
+        {
+            Storage.car[i].product_name = br.ReadString();
+            Storage.car[i].manufacturer = br.ReadString();
+            Storage.car[i].price = br.ReadInt32();
+            Storage.car[i].quantity = br.ReadInt32();
+            Storage.car[i].store_number = br.ReadInt32();
+            Storage.car[i].consignment = br.ReadInt32();
+        }
+
     }
 }
