@@ -27,13 +27,13 @@ namespace Курсовая_работа
         private void faqEditBtn_Click(object sender, EventArgs e)
         {
             faqTitleLabel.Text = "Edit item";
-            faqBox.Text = "You can edit an item from the database if you go along the path 'Main Menu -> Edit database'.\n\nHaving followed this path, you will need to enter the password that is defined in the program code.\n\nAfter entering the password, the database editing function will become available to you.\n\nYou can select the element you need for editing by searching by the name of the element, or by switching between all elements of the database.";
+            faqBox.Text = "You can edit an item from the database if you go along the path 'Main Menu -> Edit database'.\n\nHaving followed this path, you will need to enter the password that is defined in the program code. Default password: course_c#\n\nAfter entering the password, the database editing function will become available to you.\n\nYou can select the element you need for editing by searching by the name of the element, or by switching between all elements of the database.";
         }
 
         private void faqDelBtn_Click(object sender, EventArgs e)
         {
             faqTitleLabel.Text = "Delete item";
-            faqBox.Text = "You can edit an item from the database if you go along the path 'Main Menu -> Edit database'.\n\nHaving followed this path, you will need to enter the password that is defined in the program code.\n\nAfter entering the password, you will have the option to remove the item from the database.\n\nYou can select the element you need to delete by searching by the name of the element, or by switching between all elements of the database.\n\nIn addition, you will have the option to delete all items from the database at the click of a button.";
+            faqBox.Text = "You can edit an item from the database if you go along the path 'Main Menu -> Edit database'.\n\nHaving followed this path, you will need to enter the password that is defined in the program code. Default password: course_c#\n\nAfter entering the password, you will have the option to remove the item from the database.\n\nYou can select the element you need to delete by searching by the name of the element, or by switching between all elements of the database.\n\nIn addition, you will have the option to delete all items from the database at the click of a button.";
         }
 
         private void faqDispBtn_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace Курсовая_работа
         private void faqAboutBtn_Click(object sender, EventArgs e)
         {
             faqTitleLabel.Text = "Information about program";
-            faqBox.Text = "This program was developed as a course project for the course 'Programming and Theory of Algorithms', performed by Khatsaiuk A.A.\n\nOdessa, 2020.";
+            faqBox.Text = "This program was developed as a course project for the course 'Programming and Theory of Algorithms', performed by Khatsaiuk A.A.\n\nTo test the functionality of the program, use the file '20 elements.bin' that is located on the main page of the repository with the program.\n\nOdessa, 2020.";
         }
     }
 }
